@@ -1,0 +1,350 @@
+\documentclass[12pt]{beamer}
+
+
+\usetheme{Singapore}
+\usecolortheme{seagull}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[utf8]{inputenc}
+\usepackage[makeroom]{cancel}
+\usepackage[russian]{babel}
+
+\usepackage{tgschola}
+\usepackage[T1]{fontenc}
+\normalfont
+
+\setbeamercovered{invisible}
+\setbeamertemplate{navigation symbols}{} 
+
+\usepackage{graphicx}
+
+\title[Леми на Щолц]{Първа и втора лема на Щолц}
+
+\author{Минко Гечев}
+\institute[СУ]
+{
+Софийски Университет,
+Факултет по Математика и Информатика 
+\medskip
+{\emph{}}
+}
+\date{03.04.2013}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Лема 1}
+\begin{block}
+{Лема 1:}
+Нека \(\{y_n\}_{n=1}\) е строго монотонна, а
+\begin{center}
+\(\displaystyle\lim_{x \to \infty} \frac{x_{n+1} - x_n}{y_{n+1} - y_n} = l\)
+\end{center}
+за \(\forall \varepsilon_1\ > 0, \exists N_1: \forall k > n > N_1:\)
+\begin{center}
+\(\displaystyle\lvert\frac{x_k - x_n}{y_k - y_n} - l\rvert < \varepsilon_1\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (1)}
+\begin{block}
+{}
+\begin{center}
+1 сл. \(\{y_n\}_{n=0}^{\infty}\) е строго растяща
+\(\Rightarrow y_j > y_i\) за \(\forall j > i\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (2)}
+\begin{block}
+{}
+\begin{center}
+\(\displaystyle\lvert\frac{x_j - x_i}{y_j - y_i} - l\rvert < \varepsilon_1 \Leftrightarrow\)
+\((l - \varepsilon_1)(y_j - y_i) < x_j - x_i < (l + \varepsilon_1)(y_j - y_i)\) (1)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (3)}
+\begin{block}
+{}
+Ако приложим (1) за \(i = n, j = n + 1\) и \(j = n + 2, i = n + 1\) и т.н. получаваме:
+\begin{center}
+\(
++\left\{
+    \begin{array}{l l}
+    (l - \varepsilon_1)(y_{n+1} - y_n) < x_{n+1} - x_n < (l + \varepsilon_1)(y_{n+1} - y_n)\\
+    ...\\
+    (l - \varepsilon_1)(y_k - y_{k-1}) < x_k - x_{k-1} < (l + \varepsilon_1)(y_k - y_{k-1})
+    \end{array} \right.
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (4)}
+\begin{block}
+{}
+\begin{center}
+\(
+    (l - \varepsilon_1)(\cancel{y_{n+1}} - y_n + \cancel{y_{n+2}} - y_{n+1} +...+ y_k - \cancel{y_{k-1}}) <
+    x_{n+1} - x_n + x_{n+2} - x_{n-1} +...+ x_k - x_{k-1} <
+    (l + \varepsilon_1)(\cancel{y_{n+1}} - y_n + \cancel{y_{n+2}} - \cancel{y_{n+1}} +...+ y_k - \cancel{y_{k-1}})
+    (l - \varepsilon_1)(y_k - y_n) < x_k - x_n < (l - \varepsilon_1)(y_k - y_n)
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (5)}
+\begin{block}
+{}
+\begin{center}
+От тук намерихме
+\(N_1: k > n > N_1\) и
+\(\displaystyle\lvert\frac{x_k - x_n}{y_k - y_n} - l\rvert < \varepsilon_1\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Първа лема на Щолц}
+\begin{block}
+{Лема:}
+Нека $(a_n)_{n\ge1}$ и $(b_n)_{n\ge1}$ са две редици от реални числа.
+Нека също $b_n$ е строго растяща, неограничена редица и съществува следната граница:
+\newline
+\centerline{$\displaystyle\lim_{n \to \infty} \frac{a_{n+1}-a_n}{b_{n+1}-b_n}=\ell$}
+\newline
+\newline
+Тогава $\displaystyle\lim_{n \to \infty} \frac{a_n}{b_n}$ съществува и е равна на $\ell$.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (1)}
+\begin{block}
+{}
+От Лема 1 \(\Rightarrow \exists N: k > n > N\)
+\begin{center}
+\(\displaystyle\lvert \frac{x_k - x_n}{y_k - y_n} - l\rvert < \varepsilon\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (2)}
+\begin{block}
+{}
+Нека фиксираме \(n > N\) и направим граничен преход при \(k \to \infty\) в горното неравенство. По условие \(\{x_n\}_{n=0}^\infty\) и \(\{y_n\}_{n=0}^\infty\) са намаляващи и клонят към 0 при \(\displaystyle n \to \infty \Rightarrow \lvert\frac{x_n}{y_n} - l\rvert \leq \varepsilon_1 < \varepsilon\) т.е.:
+\begin{center}
+\(\displaystyle\forall n > N \Rightarrow \lvert \frac{x_n}{y_n} - l \rvert < \varepsilon \Rightarrow \lim_{n \to \infty}\frac{x_n}{y_n} = l\).
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Втора лема на Щолц}
+\begin{block}
+{Лема:}
+Нека \(\{y_n\}_{n=1}^\infty\) е строго растяща - \(\displaystyle\lim_{n \to \infty}y_n = \infty\) и \(\displaystyle\lim_{n \to \infty}\frac{x_{n+1} - x_n}{y_{n+1} - y_n} = l\). Тогава:
+\begin{center}
+\(\displaystyle\lim_{n \to \infty}\frac{x_n}{y_n} = l\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (1)}
+\begin{block}
+{}
+Лема 1 следва, че \(\exists N_1 : k > m > N_1:\)
+\begin{center}
+\(
+    \displaystyle\lvert\frac{x_k - x_m}{y_k - y_m} - l\rvert < \varepsilon_1
+\)
+т.е. \((l - \varepsilon_1)(y_k - y_m) < x_k - x_m < (l + \varepsilon_1)(y_k - y_m)\).
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (2)}
+\begin{block}
+{}
+Нека \(m > N_1, y_m > 0\). Нека разделим на \(y_k > 0\):
+\begin{center}
+\(\displaystyle(l - \varepsilon_1)(l - \frac{y_m}{y_k}) < \frac{x_k}{y_k} - \frac{x_m}{y_k} < (l + \varepsilon_1)(1 - \frac{y_m}{y_k})\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство (3)}
+\begin{block}
+{}
+Нека \(k \to \infty\), понеже \(y_k \to \infty\), при \(k \to \infty\):
+\begin{center}
+\(
+    \displaystyle\lim_{k \to \infty}((l - \varepsilon_1)(1 - \frac{y_m}{y_k}) + \frac{x_m}{y_k}) = l - \varepsilon_1 < l - \varepsilon,
+\)
+и
+\end{center}
+\begin{center}
+\(
+    \displaystyle\lim_{k \to \infty}((l + \varepsilon_1)(1 - \frac{y_m}{y_k}) + \frac{x_m}{y_k}) = l + \varepsilon_1 < l + \varepsilon
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Теорема 1}
+\begin{block}
+{Теорема 1:}
+Нека \((a_n)\) е редица от реални числа, \(\displaystyle\{b_n\}_{n=0}^\infty: \lim_{n \to \infty} b_n = \infty\). Ако:
+\begin{center}
+\(
+    \displaystyle\lim_{n \to \infty}\frac{b_n}{b_{n+1}} = b, b \in \mathbb R 
+\)
+\end{center}
+То: \(\displaystyle\lim_{n \to \infty}\frac{a_n}{b_n} = l \Rightarrow \lim_{n \to \infty}\frac{a_{n+1} - a_n}{b_{n+1} - b_n} = l \)
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство}
+\begin{block}
+{}
+\begin{center}
+\(
+    \displaystyle\frac{a_{n + 1} - a_n}{b_{n+1} - b_n} \frac{\frac{1}{b_{n+1}}}{\frac{1}{b_{n+1}}} = \frac{\frac{a_{n+1}}{b_{n+1}} - \frac{a_n}{b_n}\frac{b_n}{b_{n+1}}}{1 - \frac{b_n}{b_{n+1}}}
+    \to
+    \frac{l - lb}{1 - b} = l.
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Теорема 2}
+\begin{block}
+{Теорема 2:}
+Нека е дадена редицата \(\{x_n\}\). Ако \(\displaystyle\lim_{n \to \infty} x_n = x, x \in (-\infty, \infty)\), тогава:
+\begin{center}
+\(
+    \displaystyle\lim_{n \to \infty} \frac{x_1 + x_2 + ... + x_n}{n} = x
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Доказателство}
+\begin{block}
+{}
+Нека \(b_n = n, a_n = x_1 + x_2 + ... + x_n\), тогава от \(\displaystyle\frac{a_{n+1} - a_n}{b_{n+1} - b_n} = x_{n+1} \to x\).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Пример 1}
+\begin{block}
+{}
+Оценете \(\displaystyle\lim_{n \to \infty} \frac{1^k + 2^k + ... + n^k}{n^{k+1}}\), където \(k \in N\).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Решение}
+\begin{block}
+{}
+Нека \(a_n = 1^k + 2^k + ... + n^k, b_n = n^{k+1}\). Ясно е, че редицата \(b_n\) е с положителни членове, строго растяща и неограничена. Сега:
+\begin{center}
+\(
+    \displaystyle\lim_{n->\infty}\frac{a_{n+} - a_n}{b_{n+1} - b_n} = \lim_{n \to \infty}\frac{(n + 1)^k}{(n + 1)^{k+1} - n^{k+1}} = 
+    \lim_{n \to \infty}\frac{(n + 1)^k}{(1 + \binom{k+1}{1}n + \binom{k + 1}{2}n^2+ ... + \binom{k + 1}{k}n^k + n^{k + 1}) - n^{k + 1}} = 
+    \lim_{n \to \infty}\frac{(n + 1)^k/n^k}{(1 + \binom{k + 1}{1}n + \binom{k + 1}{2}n^2 + ... + \binom{k + 1}{k}n^k)/n^k} =
+    \lim_{n \to \infty}\frac{(1 + 1 / n)^k}{\binom{k + 1}{k}} = \frac{1}{k + 1}.
+\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Пример 2}
+\begin{block}
+{}
+Намерете:
+\begin{center}
+\(\displaystyle\lim_{n\to\infty}\frac{1!+2!+\cdots+n!}{n!}\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Решение}
+\begin{block}
+{}
+Като приложим лемата на Щолц получаваме:
+\begin{center}
+\(\displaystyle\lim_{n\to\infty}\frac{1!+2!+\cdots+n!}{n!}=
+\newline
+\lim_{n\to\infty}\frac{(n+1)!}{(n+1)!-n!}=\lim_{n\to\infty}\frac{n+1}{n}=1\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Пример 3}
+\begin{block}
+{}
+\begin{center}
+Нека \(\{x_n\}\) е редица от реални числа и нека:
+\(x_{n + 1} = x_n + e^{-x_n}, \forall n \geq 0.\)
+\newline
+Оценете: \(\displaystyle\lim_{n\to\infty} (x_n - \ln(n+1))\).
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Решение}
+\begin{block}
+{}
+\(x_n\) е растяща, \(x_n \to \infty\).
+Означаваме \(\displaystyle y_n=e^{x_n-\ln(n+1)}=\frac{e^{x_n}}{n+1}\).
+Нека приложим лемата на Щолц:
+\begin{center}
+\(\displaystyle\frac{e^{x_{n+1}}-e^{x_n}}{n+2-(n+1)}=e^{x_n}(e^{x_{n+1}-x_n}-1)=\frac{e^{e^{-x_n}}-1}{e^{-x_n}}\to 1\)
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Решение}
+\begin{block}
+{}
+Тъй като \(\displaystyle \lim_{y\to 0}\frac{e^y-1}{y}=1\) и \(e^{-x_n}\to 0\).
+\newline
+От Щолц следва, че \(y_n \to 1\), което означава, че \(\displaystyle\lim_{n \to \infty}x_n-\ln(n+1)= 0\).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\centerline{Благодаря за вниманието}
+\end{frame}
+
+\end{document} 
